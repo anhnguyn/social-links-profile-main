@@ -1,0 +1,103 @@
+// typo
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@font-size-base: 16px;
+
+// color
+@green: rgb(197, 248, 42);
+@white: rgb(255, 255, 255);
+@dark-grey: rgb(31, 31, 31);
+@off-black: rgb(20, 20, 20);
+@grey: rgb(51, 51, 51);
+
+// spacing
+@spacing-base: 16px;
+@border-radius-base: 8px;
+
+// breakpoint
+@tablet: ~"(max-width: 1023px)";
+
+.text-center {
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-semi-bold {
+  font-weight: 600;
+}
+
+body {
+  background-color: @off-black;
+  display: flex;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  height: 100vh;
+  margin: 0;
+
+  @media @tablet {
+    padding-left: @spacing-base;
+    padding-right: @spacing-base;
+  }
+}
+
+main {
+  align-self: center;
+  background-color: @dark-grey;
+  border-radius: @border-radius-base * 2;
+  margin: auto;
+  max-width: 300px;
+  padding: @spacing-base * 2.5;
+
+  @media @tablet {
+    padding: @spacing-base * 1.5;
+  }
+}
+
+.title {
+  .text-center();
+  margin-bottom: @spacing-base * 2;
+}
+
+
+img {
+  border-radius: 50%;
+}
+
+h1 {
+  .text-semi-bold();
+  color: @white;
+  font-size: @font-size-base * 1.5;
+}
+
+h2 {
+  .text-semi-bold();
+  color: @green;
+  font-size: @font-size-base;
+  margin-bottom: @spacing-base * 2;
+}
+
+p {
+  color: @white;
+}
+
+a {
+  .text-bold();
+  .text-center();
+  background-color: @grey;
+  border-radius: @border-radius-base;
+  color: @white;
+  display: block;
+  padding: @spacing-base;
+  text-decoration: none;
+
+  &:not(:last-of-type) {
+    margin-bottom: @spacing-base;
+  }
+
+  &:hover {
+    background-color: @green;
+    color: @dark-grey;
+  }
+}
